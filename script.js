@@ -1,7 +1,8 @@
 var apiKey = "appid=4e1651d0b63fcaf65777a279c1b2b9c2";
 var https = "https://api.openweathermap.org/data/2.5/weather?";
 var citys = ["q=Viborg", "q=Gjern", "lat=1.6178&lon=54.9783"];
-var urls = [""+https+""+citys[0]+"&"+apiKey+"", ""+https+"?"+citys[1]+"&"+apiKey+"", ""+https+""+citys[2]+"&"+apiKey+""];
+var units = "units=metric";
+var urls = [""+https+""+citys[0]+"&"+units+"&"+apiKey+"", ""+https+"?"+citys[1]+"&"+units+"&"+apiKey+"", ""+https+""+citys[2]+"&"+units+"&"+apiKey+""];
 /*
 // Viborg
 var promise = fetch(urls[0]);
@@ -19,14 +20,18 @@ window.onload = (event) => {
 // Viborg
 fetch(urls[0])
   .then(v=>v.json())
-    .then(v=>console.log(v))
+    .then(populateRight)
 
 // Newcastle
 fetch(urls[2])
   .then(v=>v.json())
-    .then(v=>console.log(v))
+    .then(populateCenter)
 
-function newRightelemnt(data){
+function populateRight(v){
   var textArea = document.getElementById("t1")
-  textArea.textContent = data;
+  textArea.textContent = `Temp: ${v.main.temp}c\nDescription: ${v.weather[0].description}\nWindspeed: ${v.wind.speed}m/s\nWindDirection: ${v.wind.deg}deg`;
+}
+function populateCenter(v){
+  var textArea = document.getElementById("t2")
+  textArea.textContent = `Temp: ${v.main.temp}c\nDescription: ${v.weather[0].description}\nWindspeed: ${v.wind.speed}m/s\nWindDirection: ${v.wind.deg}deg`;
 }
