@@ -32,6 +32,7 @@ function populateRight(v){
   elm.setAttribute("src", `http://openweathermap.org/img/wn/${v.weather[0].icon}@2x.png`)
   document.getElementById("d1").appendChild(elm)
 }
+
 function populateCenter(v){
   var riseFormat = timeWisserdry(v.sys.sunrise)
   var setFormat = timeWisserdry(v.sys.sunset)
@@ -41,6 +42,7 @@ function populateCenter(v){
   elm.setAttribute("src", `http://openweathermap.org/img/wn/${v.weather[0].icon}@2x.png`)
   document.getElementById("d2").appendChild(elm)
 }
+
 function populateLeft(v){
   var riseFormat = timeWisserdry(v.sys.sunrise)
   var setFormat = timeWisserdry(v.sys.sunset)
@@ -50,6 +52,7 @@ function populateLeft(v){
   elm.setAttribute("src", `http://openweathermap.org/img/wn/${v.weather[0].icon}@2x.png`)
   document.getElementById("d3").appendChild(elm)
 }
+
 function timeWisserdry(unix){
   var date = new Date(unix * 1000)
   var hour = date.getHours()
@@ -58,3 +61,5 @@ function timeWisserdry(unix){
   var riseFormat = hour + ':' + min.substr(-2) + ':' + sec.substr(-2)
   return riseFormat
 }
+
+// $("div.test.test2").clone()
