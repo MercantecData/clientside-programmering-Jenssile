@@ -27,7 +27,7 @@ function populateRight(v){
   var riseFormat = timeWisserdry(v.sys.sunrise)
   var setFormat = timeWisserdry(v.sys.sunset)
   var textArea = document.getElementById("t1")
-  textArea.textContent = `Temp: ${v.main.temp}c\nDescription: ${v.weather[0].description}\nWindspeed: ${v.wind.speed}m/s\nWindDirection: ${v.wind.deg}deg\nHumidity: ${v.main.humidity}%\nSunrise: ${riseFormat}\nSunset: ${setFormat}`;
+  textArea.textContent = `Temp: ${v.main.temp}c\nDescription: ${v.weather[0].description}\nWindspeed: ${v.wind.speed}m/s\nWindDirection: ${v.wind.deg}deg\nHumidity: ${v.main.humidity}%\nSunrise: ${riseFormat}\nSunset: ${setFormat}\nTimezone: UTC ${v.timezone}`;
   var elm = document.createElement("img")
   elm.setAttribute("src", `http://openweathermap.org/img/wn/${v.weather[0].icon}@2x.png`)
   document.getElementById("d1").appendChild(elm)
@@ -36,7 +36,7 @@ function populateCenter(v){
   var riseFormat = timeWisserdry(v.sys.sunrise)
   var setFormat = timeWisserdry(v.sys.sunset)
   var textArea = document.getElementById("t2")
-  textArea.textContent = `Temp: ${v.main.temp}c\nDescription: ${v.weather[0].description}\nWindspeed: ${v.wind.speed}m/s\nWindDirection: ${v.wind.deg}deg\nHumidity: ${v.main.humidity}%\nSunrise: ${riseFormat}\nSunset: ${setFormat}`;
+  textArea.textContent = `Temp: ${v.main.temp}c\nDescription: ${v.weather[0].description}\nWindspeed: ${v.wind.speed}m/s\nWindDirection: ${v.wind.deg}deg\nHumidity: ${v.main.humidity}%\nSunrise: ${riseFormat}\nSunset: ${setFormat}\nTimezone: UTC ${v.timezone}`;
   var elm = document.createElement("img")
   elm.setAttribute("src", `http://openweathermap.org/img/wn/${v.weather[0].icon}@2x.png`)
   document.getElementById("d2").appendChild(elm)
@@ -45,13 +45,12 @@ function populateLeft(v){
   var riseFormat = timeWisserdry(v.sys.sunrise)
   var setFormat = timeWisserdry(v.sys.sunset)
   var textArea = document.getElementById("t3")
-  textArea.textContent = `Temp: ${v.main.temp}c\nDescription: ${v.weather[0].description}\nWindspeed: ${v.wind.speed}m/s\nWindDirection: ${v.wind.deg}deg\nHumidity: ${v.main.humidity}%\nSunrise: ${riseFormat}\nSunset: ${setFormat}`;
+  textArea.textContent = `Temp: ${v.main.temp}c\nDescription: ${v.weather[0].description}\nWindspeed: ${v.wind.speed}m/s\nWindDirection: ${v.wind.deg}deg\nHumidity: ${v.main.humidity}%\nSunrise: ${riseFormat}\nSunset: ${setFormat}\nTimezone: UTC ${v.timezone}`;
   var elm = document.createElement("img")
   elm.setAttribute("src", `http://openweathermap.org/img/wn/${v.weather[0].icon}@2x.png`)
   document.getElementById("d3").appendChild(elm)
 }
-function timeWisserdry(unixIn){
-  var unix = unixIn
+function timeWisserdry(unix){
   var date = new Date(unix * 1000)
   var hour = date.getHours()
   var min = "0" + date.getMinutes()
