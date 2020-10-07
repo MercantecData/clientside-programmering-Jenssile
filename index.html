@@ -3,26 +3,40 @@
     <script src="./jq.js"></script>
     <script src="./script.js"></script>
     <link rel="stylesheet" href="./style.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="header">
-        <h2>Weather</h2>
+        <h2>Weather/Portfolio</h2>
     </div>
     <div class="row">
-        <div class="card template">
-            <img src="http://openweathermap.org/img/wn/10d@4x.png">
-            <div class="container">
-                <h4 class="name"><b>test</b></h4>
-                <p class="temp">18</p>
-                <p class="dec">more test</p>
-                <p class="humidity">23</p>
-                <p class="timezone">UTC 3600</p>
-                <p class="sunrise">7:24:08</p>
-                <p class="sunset">20:52:03</p>
+        <div class="column left">
+            <a href="https://www.linkedin.com/in/jens-eric-bouwens/" class="fa fa-linkedin" target="_blank"></a>
+        </div>
+        <div class="column middle">
+            <div class="bar template">
+                <p class="name">Name</p>
+                <div class="barBG">
+                    <div class="proficiency">90%</div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer">
-        <p>Made by @Jenssile</p>
+        <div class="column right">
+            <input type="text" id="myInput" placeholder="Newcastle,GB">
+            <button type="button" id="myBtn">Search</button>
+            <div class="card template">
+                <img src="http://openweathermap.org/img/wn/10d@4x.png">
+                <div class="container">
+                    <h4 class="name"><b>test</b></h4>
+                    <p class="temp">18</p>
+                    <p class="dec">more test</p>
+                    <p class="humidity">23</p>
+                    <p class="timezone">UTC 3600</p>
+                    <p class="sunrise">7:24:08</p>
+                    <p class="sunset">20:52:03</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
