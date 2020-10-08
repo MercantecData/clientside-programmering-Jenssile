@@ -61,6 +61,48 @@ body {
     display: none;
 }
 
+.hidden {
+    display: none;
+}
+
+.pritybutton {
+    font-family: 'Roboto Mono', monospace;
+    position: relative;
+    background-color: #c42828;
+    border: none;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 5px 5px 5px 5px;
+}
+
+.pritybutton:after {
+    content: "";
+    background: #9e2424;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.pritybutton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
